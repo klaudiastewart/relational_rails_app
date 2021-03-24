@@ -1,0 +1,3 @@
+class IceCreamTypes < ApplicationRecord
+
+end
