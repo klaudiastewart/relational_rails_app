@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_03_23_234429) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "moddatetime"
   enable_extension "plpgsql"
 
   create_table "parents", force: :cascade do |t|
@@ -20,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_03_23_234429) do
     t.boolean "has_ice_cream_alternatives"
     t.float "google_review_rating"
     t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
