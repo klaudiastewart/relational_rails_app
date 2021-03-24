@@ -1,12 +1,22 @@
-<p>Please tell us about your ice cream shop and the types you have:</p>
+<h2> Ice Cream Shop Section</h2>
+<h3>Please tell us about your ice cream shop and the types you have:</h3>
 <form action="/parents" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>What's the name of your shop?:</p>
+  <p>What's the name of your shop?</p>
   <input type='text' name='parent[name]'/><br/>
-  <p>What is the Google review rating for your shop?:</p>
+  <p>What is the Google review rating for your shop?</p>
   <input type='number' name='parent[google_review_rating]'/><br/>
-  <p>Do you serve ice cream alternatives?(y or n):</p>
+  <p>Do you serve ice cream alternatives?(y or n)</p>
   <input type='text' name='parent[has_ice_cream_alternatives]'/><br/>
-<p>Please tell us about your garage and the types of vehicles in it:</p>
+<h2> Ice Cream Type Section</h2>
+<h3>Please tell us about a type of ice cream (or alternative) you serve:</h3>
+<form action="/parents" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>What's the name of your ice cream/alternative?</p>
+  <input type='text' name='child[name]'/><br/>
+  <p>Is the ice cream/alternative nut free?(y or n)</p>
+  <input type='text' name='child[nut_free]'/><br/>
+  <p>Please enter a numeric value for number of calories per scoop.</p>
+  <input type='number' name='child[calories_per_scoop]'/><br/>
   <input type='submit'/>
 </form>
