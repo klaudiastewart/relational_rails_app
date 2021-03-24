@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/parents/new', to: 'parents#new'
   get '/parents/:id', to: 'parents#show'
   post '/parents', to: 'parents#create'
+
+  get '/child_table_name', to: 'child_table_name#index'
 end
