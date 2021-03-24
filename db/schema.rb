@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_03_23_234429) do
     t.string "name"
     t.boolean "has_ice_cream_alternatives"
     t.float "google_review_rating"
+    t.datetime "created_at"
   end
 
 end
