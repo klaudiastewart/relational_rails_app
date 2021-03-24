@@ -1,0 +1,12 @@
+<p>Please tell us about your ice cream shop and the types you have:</p>
+<form action="/parents" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>What's the name of your shop?:</p>
+  <input type='text' name='parent[name]'/><br/>
+  <p>What is the Google review rating for your shop?:</p>
+  <input type='number' name='parent[google_review_rating]'/><br/>
+  <p>Do you serve ice cream alternatives?(y or n):</p>
+  <input type='text' name='parent[has_ice_cream_alternatives]'/><br/>
+<p>Please tell us about your garage and the types of vehicles in it:</p>
+  <input type='submit'/>
+</form>
