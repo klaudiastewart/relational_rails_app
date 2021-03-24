@@ -10,16 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_145613) do
+ActiveRecord::Schema.define(version: 2021_03_24_205046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "moddatetime"
   enable_extension "plpgsql"
 
-  create_table "ice_cream_tables", force: :cascade do |t|
+  create_table "ice_cream_types", id: :bigint, default: -> { "nextval('ice_cream_tables_id_seq'::regclass)" }, force: :cascade do |t|
     t.string "name"
     t.boolean "nut_free"
-    t.float "calories_per_float"
+    t.float "calories_per_scoop"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "ice_cream_shop_id"
   end
 
   create_table "parents", force: :cascade do |t|
@@ -30,4 +33,5 @@ ActiveRecord::Schema.define(version: 2021_03_24_145613) do
     t.datetime "updated_at"
   end
 
+  add_foreign_key "ice_cream_types", "parents", column: "ice_cream_shop_id", name: "ice_cream_types_ice_cream_shop_id_fkey"
 end
