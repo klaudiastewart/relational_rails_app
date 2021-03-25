@@ -16,15 +16,6 @@ ActiveRecord::Schema.define(version: 2021_03_25_010309) do
   enable_extension "moddatetime"
   enable_extension "plpgsql"
 
-  create_table "ice_cream_types", id: :bigint, default: -> { "nextval('ice_cream_tables_id_seq'::regclass)" }, force: :cascade do |t|
-    t.string "name"
-    t.boolean "nut_free"
-    t.float "calories_per_scoop"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer "ice_cream_shop_id"
-  end
-
   create_table "shops", force: :cascade do |t|
     t.string "name"
     t.boolean "has_ice_cream_alternatives"
@@ -33,5 +24,4 @@ ActiveRecord::Schema.define(version: 2021_03_25_010309) do
     t.datetime "updated_at"
   end
 
-  add_foreign_key "ice_cream_types", "shops", column: "ice_cream_shop_id", name: "ice_cream_types_ice_cream_shop_id_fkey"
 end
