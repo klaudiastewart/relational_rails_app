@@ -9,6 +9,12 @@ class ParentsController < ApplicationController
     @parent = Parent.find(params[:id])
   end
 
+  def show_child
+    binding.pry
+    @show_ice_cream = IceCreamTypes.all
+    # @show_ice_cream = IceCreamTypes.find(params[:ice_cream_shop_id])
+  end
+
   def new
   end
 
