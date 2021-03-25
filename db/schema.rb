@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_010309) do
+ActiveRecord::Schema.define(version: 2021_03_25_021337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "moddatetime"
   enable_extension "plpgsql"
+
+  create_table "flavors", force: :cascade do |t|
+    t.string "name"
+    t.boolean "nut_free"
+    t.float "calories_per_scoop"
+  end
 
   create_table "shops", force: :cascade do |t|
     t.string "name"

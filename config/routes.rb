@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get '/shops/:id/child_table_name', to: 'shops#show_child'
   post '/shops', to: 'shops#create'
 
-  get '/child_table_name', to: 'child_table_name#index'
-  get '/child_table_name/:id', to: 'child_table_name#show'
+  get '/flavors', to: 'flavors#index'
+  get '/flavors/:id', to: 'flavors#show'
 end

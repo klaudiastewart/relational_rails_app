@@ -25,18 +25,15 @@ class ShopsController < ApplicationController
       has_ice_cream_alternatives: params[:shop][:has_ice_cream_alternatives],
       google_review_rating: params[:shop][:google_review_rating]
       })
-      # binding.pry
     shop.save
-    # binding.pry
 
-    ice_cream_types = IceCreamTypes.new({
-      name: params[:child][:name],
-      nut_free: params[:child][:nut_free],
-      calories_per_scoop: params[:child][:calories_per_scoop]
+    flavor = Flavors.new({
+      name: params[:flavor][:name],
+      nut_free: params[:flavor][:nut_free],
+      calories_per_scoop: params[:flavor][:calories_per_scoop]
       })
 
-    ice_cream_types.save
-    binding.pry
+    flavor.save
     redirect_to '/shops'
   end
 end

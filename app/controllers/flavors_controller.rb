@@ -1,11 +1,11 @@
-class shopsController < ApplicationController
+class FlavorsController < ApplicationController
   def index
-    # binding.pry
-    @ice_cream_types = shops.all
+    binding.pry
+    @ice_cream_types = Flavors.all
   end
 
   def show
-    @ice_cream_type = shops.find(params[:id])
+    @ice_cream_type = Flavors.find(params[:id])
   end
 
   # def create

@@ -13,10 +13,10 @@
 <form action="/shops" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>What's the name of your ice cream/alternative?</p>
-  <input type='text' name='child[name]'/><br/>
+  <input type='text' name='flavor[name]'/><br/>
   <p>Is the ice cream/alternative nut free?(y or n)</p>
-  <input type='text' name='child[nut_free]'/><br/>
+  <input type='text' name='flavor[nut_free]'/><br/>
   <p>Please enter a numeric value for number of calories per scoop.</p>
-  <input type='number' name='child[calories_per_scoop]'/><br/>
+  <input type='number' name='flavor[calories_per_scoop]'/><br/>
   <input type='submit'/>
 </form>
