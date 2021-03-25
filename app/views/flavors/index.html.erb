@@ -1,0 +1,5 @@
+<h1>All Ice Cream Types</h1>
+
+<% @ice_cream_types.each do |ice_cream_type| %>
+  <h3><a href="/shops/<%= ice_cream_type.id %>"><%= ice_cream_type.name %></a></h3>
+<% end %>

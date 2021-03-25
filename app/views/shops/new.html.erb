@@ -1,16 +1,16 @@
 <h2> Ice Cream Shop Section</h2>
 <h3>Please tell us about your ice cream shop and the types you have:</h3>
-<form action="/parents" method="post">
+<form action="/shops" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>What's the name of your shop?</p>
-  <input type='text' name='parent[name]'/><br/>
+  <input type='text' name='shop[name]'/><br/>
   <p>What is the Google review rating for your shop?</p>
-  <input type='number' name='parent[google_review_rating]'/><br/>
+  <input type='number' name='shop[google_review_rating]'/><br/>
   <p>Do you serve ice cream alternatives?(y or n)</p>
-  <input type='text' name='parent[has_ice_cream_alternatives]'/><br/>
-<h2> Ice Cream Type Section</h2>
+  <input type='text' name='shop[has_ice_cream_alternatives]'/><br/>
+<h2> Ice Cream Flavor Section</h2>
 <h3>Please tell us about a type of ice cream (or alternative) you serve:</h3>
-<form action="/parents" method="post">
+<form action="/shops" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>What's the name of your ice cream/alternative?</p>
   <input type='text' name='child[name]'/><br/>

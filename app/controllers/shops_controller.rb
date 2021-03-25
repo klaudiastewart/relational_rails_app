@@ -1,12 +1,12 @@
-class ParentsController < ApplicationController
+class ShopsController < ApplicationController
   def index
     # binding.pry
-    @parents = Parent.all
+    @shops = Shop.all
   end
 
   def show
     # binding.pry
-    @parent = Parent.find(params[:id])
+    @shop = Shop.find(params[:id])
   end
 
   def show_child
@@ -20,13 +20,13 @@ class ParentsController < ApplicationController
 
   def create
     binding.pry
-    parent = Parent.new({
-      name: params[:parent][:name],
-      has_ice_cream_alternatives: params[:parent][:has_ice_cream_alternatives],
-      google_review_rating: params[:parent][:google_review_rating]
+    shop = Shop.new({
+      name: params[:shop][:name],
+      has_ice_cream_alternatives: params[:shop][:has_ice_cream_alternatives],
+      google_review_rating: params[:shop][:google_review_rating]
       })
       # binding.pry
-    parent.save
+    shop.save
     # binding.pry
 
     ice_cream_types = IceCreamTypes.new({
@@ -37,6 +37,6 @@ class ParentsController < ApplicationController
 
     ice_cream_types.save
     binding.pry
-    redirect_to '/parents'
+    redirect_to '/shops'
   end
 end

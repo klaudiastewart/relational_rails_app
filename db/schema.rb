@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_205046) do
+ActiveRecord::Schema.define(version: 2021_03_25_010309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "moddatetime"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_03_24_205046) do
     t.integer "ice_cream_shop_id"
   end
 
-  create_table "parents", force: :cascade do |t|
+  create_table "shops", force: :cascade do |t|
     t.string "name"
     t.boolean "has_ice_cream_alternatives"
     t.float "google_review_rating"
@@ -33,5 +33,5 @@ ActiveRecord::Schema.define(version: 2021_03_24_205046) do
     t.datetime "updated_at"
   end
 
-  add_foreign_key "ice_cream_types", "parents", column: "ice_cream_shop_id", name: "ice_cream_types_ice_cream_shop_id_fkey"
+  add_foreign_key "ice_cream_types", "shops", column: "ice_cream_shop_id", name: "ice_cream_types_ice_cream_shop_id_fkey"
 end

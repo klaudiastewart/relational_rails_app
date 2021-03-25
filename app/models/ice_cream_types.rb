@@ -1,3 +1,3 @@
 class IceCreamTypes < ApplicationRecord
-  belongs_to :parents
+  belongs_to :shops
 end
