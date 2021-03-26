@@ -5,11 +5,13 @@ Rails.application.routes.draw do
 
   get '/shops', to: 'shops#index'
   get '/shops/new', to: 'shops#new'
-  get '/shops/:id', to: 'shops#show'
-  get '/shops/:id/flavors', to: 'shops#show_flavors'
+  get '/shops/:shop_id', to: 'shops#show'
+  get '/shops/:shop_id/flavors', to: 'shops#show_flavors'
   post '/shops', to: 'shops#create'
-  # post '/shops/:id/flavors', to: 'shops #create'
+  # post '/shops/:shop_id/flavors', to: 'shops #create'
 
   get '/flavors', to: 'flavors#index'
-  get '/flavors/:id', to: 'flavors#show'
+  get '/flavors/new', to: 'flavors#new'
+  get '/flavors/:flavor_id', to: 'flavors#show'
+  post '/flavors', to: 'flavors#create'
 end
