@@ -4,6 +4,8 @@ class CreateFlavorsTable < ActiveRecord::Migration[5.2]
       t.string :name
       t.boolean :nut_free
       t.float :calories_per_scoop
+
+      t.timestamps
     end
   end
 end

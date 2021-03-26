@@ -9,10 +9,10 @@ class ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
   end
 
-  def show_child
+  def show_flavor
     binding.pry
-    @show_ice_cream = IceCreamTypes.all
-    # @show_ice_cream = IceCreamTypes.find(params[:ice_cream_shop_id])
+    @show_ice_cream = Flavors.all
+    # @show_ice_cream = Flavors.find(params[:ice_cream_shop_id])
   end
 
   def new

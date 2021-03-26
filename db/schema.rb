@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_03_25_213108) do
     t.boolean "nut_free"
     t.float "calories_per_scoop"
     t.bigint "shops_id"
+    t.datetime "updated_at"
+    t.datetime "created_at"
     t.index ["shops_id"], name: "index_flavors_on_shops_id"
   end
 
