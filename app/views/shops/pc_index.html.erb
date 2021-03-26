@@ -1,5 +1,8 @@
-<p> Hello </p>
+<h2><%= "Flavors available at #{@shop.name.upcase}" %></h2>
 
 <% @flavors.each do |flavor| %>
-<%= flavor.name %>
+<h5><%= "#{flavor.name}" %></h5>
+<h5><%= "Is this flavor nut free? #{flavor.nut_free}"%></h5>
+<h5><%= "Amount of calories per scoop: #{flavor.calories_per_scoop}" %></h5>
+
 <% end %>

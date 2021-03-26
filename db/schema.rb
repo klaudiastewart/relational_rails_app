@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_213108) do
+ActiveRecord::Schema.define(version: 2021_03_26_180549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "moddatetime"
@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 2021_03_25_213108) do
     t.string "name"
     t.boolean "nut_free"
     t.float "calories_per_scoop"
-    t.bigint "shops_id"
+    t.bigint "shop_id"
     t.datetime "updated_at"
     t.datetime "created_at"
-    t.index ["shops_id"], name: "index_flavors_on_shops_id"
+    t.index ["shop_id"], name: "index_flavors_on_shop_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -34,5 +34,5 @@ ActiveRecord::Schema.define(version: 2021_03_25_213108) do
     t.datetime "updated_at"
   end
 
-  add_foreign_key "flavors", "shops", column: "shops_id"
+  add_foreign_key "flavors", "shops"
 end
