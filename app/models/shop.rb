@@ -1,3 +1,3 @@
 class Shop < ApplicationRecord
-  # has_many :flavors
+  has_many :flavors
 end

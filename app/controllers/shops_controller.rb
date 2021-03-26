@@ -3,18 +3,20 @@ class ShopsController < ApplicationController
     @shops = Shop.all
   end
 
+  def pc_index
+    binding.pry
+    @shop = Shop.find(params[:id])
+    @flavors = @shop.flavors.all
+  end
+
   def show
-    @shop = Shop.find(params[:shop_id])
+    binding.pry
+    @shop = Shop.find(params[:id])
   end
 
   def show_flavors
-    # @show_ice_cream = Flavors.all
-    # # @show_ice_cream = Flavors.find(params[:ice_cream_shop_id])
-    # flavor = Flavors.new({
-    #   name: params[:flavor][:name],
-    #   nut_free: params[:flavor][:nut_free],
-    #   calories_per_scoop: params[:flavor][:calories_per_scoop]
-    #   })
+    binding.pry
+    @final = Flavors.find(:id)
   end
 
   def new
