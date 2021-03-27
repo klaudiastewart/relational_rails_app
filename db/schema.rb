@@ -13,15 +13,16 @@
 ActiveRecord::Schema.define(version: 2021_03_27_164519) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "moddatetime"
   enable_extension "plpgsql"
 
   create_table "flavors", force: :cascade do |t|
     t.string "name"
     t.boolean "nut_free"
     t.float "calories_per_scoop"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.bigint "shop_id"
+    t.datetime "updated_at"
+    t.datetime "created_at"
     t.index ["shop_id"], name: "index_flavors_on_shop_id"
   end
 
@@ -37,6 +38,8 @@ ActiveRecord::Schema.define(version: 2021_03_27_164519) do
     t.string "name"
     t.boolean "has_ice_cream_alternatives"
     t.float "google_review_rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "vehicles", force: :cascade do |t|
