@@ -12,6 +12,7 @@ class ShopsController < ApplicationController
   def show
     binding.pry
     @shop = Shop.find(params[:id])
+    @count = @shop.flavors.count
   end
 
   def show_flavors
