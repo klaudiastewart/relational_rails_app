@@ -1,0 +1,14 @@
+<%= link_to "Flavors", "/flavors" %>
+<%= link_to "Shops", "/shops" %>
+
+<h1><%= @flavor.name %></h1>
+<h3> Ice cream/Alternative name:</h3>
+<p><%= @flavor.name %></p>
+<h3> Is this ice cream nut free?:</h3>
+<p><%= @flavor.nut_free %></p>
+<h3> Calories per scoop:</h3>
+<p><%= @flavor.calories_per_scoop%></p>
+<h3> Ice cream created at:</h3>
+<p><%= @flavor.created_at%></p>
+<h3> Ice cream last updated at:</h3>
+<p><%= @flavor.updated_at%></p>

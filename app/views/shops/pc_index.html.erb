@@ -1,0 +1,15 @@
+<%= link_to "Flavors", "/flavors" %>
+<%= link_to "Shops", "/shops" %>
+
+<h2><%= "Flavors available at #{@shop.name.upcase}" %></h2>
+
+<% if @shop.flavors.count < 1 %>
+  <b><%= "There are no flavors available at this time"%></b>
+<% end %>
+
+<% @flavors.each do |flavor| %>
+<h3><%= "#{flavor.name.capitalize}" %></h3>
+<h5><%= "Is this flavor nut free? #{flavor.nut_free}"%></h5>
+<h5><%= "Amount of calories per scoop: #{flavor.calories_per_scoop}" %></h5>
+
+<% end %>

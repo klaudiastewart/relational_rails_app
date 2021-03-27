@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#index'
-# post '/parents', to: 'parents#create'
 
   get '/parents', to: 'parents#index'
   get '/parents/new', to: 'parents#new'
@@ -16,4 +15,16 @@ Rails.application.routes.draw do
 
   get '/vehicles', to: 'vehicles#index'
   get '/vehicles/:id', to: 'vehicles#show'
+
+  get '/shops', to: 'shops#index'
+  get '/shops/new', to: 'shops#new'
+  get '/shops/:id', to: 'shops#show'
+  get '/shops/:id/flavors', to: 'shops#pc_index'
+  post '/shops', to: 'shops#create'
+
+  get '/flavors', to: 'flavors#index'
+  get '/flavors/:flavor_id', to: 'flavors#show'
+
+  get '/shops/:id/flavors/new', to: 'flavors#new'
+  post '/shops/:id/flavors', to: 'flavors#create'
 end
