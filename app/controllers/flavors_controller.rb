@@ -4,7 +4,8 @@ class FlavorsController < ApplicationController
   end
 
   def new
-    @shops = Shop.find(params[:shops_id])
+    # binding.pry
+    @shops = Shop.find(params[:id])
     # @flavor = Flavor.new
   end
 
@@ -14,7 +15,7 @@ class FlavorsController < ApplicationController
 
   def create
     binding.pry
-    @shops = Shop.find(params[:shops_id])
+    @shops = Shop.find(params[:id])
 
     @shops.flavors.create({
       name: params[:flavor][:name],
@@ -27,6 +28,6 @@ class FlavorsController < ApplicationController
 
     # redirect_to "/flavors"
 
-    redirect_to "/shops/#{params[:shops_id]}/flavors"
+    redirect_to "/shops/#{params[:id]}/flavors"
   end
 end
