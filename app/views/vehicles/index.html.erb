@@ -1,0 +1,16 @@
+<%= link_to "Home Page", "/" %>
+
+<h1>Vehicle List</h1>
+
+<% @vehicles.each do |vehicle| %>
+  <section>
+    <p>Current Garage: <%= vehicle.garage.name %></p>
+    <%= render partial: 'partials/vehicle_attributes', 
+      locals: {vehicle: vehicle }  
+    %>
+</section>
+<% end %>
+
+
+
+

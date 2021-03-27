@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_234429) do
+ActiveRecord::Schema.define(version: 2021_03_26_045543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "garages", force: :cascade do |t|
+    t.string "name"
+    t.boolean "is_full", default: false
+    t.integer "num_of_mechanics"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "parents", force: :cascade do |t|
     t.string "name"
@@ -21,4 +29,16 @@ ActiveRecord::Schema.define(version: 2021_03_23_234429) do
     t.float "google_review_rating"
   end
 
+  create_table "vehicles", force: :cascade do |t|
+    t.string "name"
+    t.boolean "is_operational", default: true
+    t.string "type_of_car"
+    t.integer "horsepower"
+    t.bigint "garage_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garage_id"], name: "index_vehicles_on_garage_id"
+  end
+
+  add_foreign_key "vehicles", "garages"
 end

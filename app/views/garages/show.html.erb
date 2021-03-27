@@ -1,0 +1,12 @@
+<%=link_to "Back To List of Garages", "/garages" %>
+
+<h1><%= @garage.name %></h1>
+
+<% unless @garage.is_full %>
+  <p>Garage Status: Garage not currently full</p>
+<% else %>
+  <p>Garage Status: Garage is full</p>
+<% end %>
+<p>Number of Mechanics: <%= @garage.num_of_mechanics %></p>
+
+<p><%= link_to "Current Vehicles", "/garages/#{@garage.id}/vehicles" %></p>

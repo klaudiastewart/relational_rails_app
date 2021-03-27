@@ -1,0 +1,10 @@
+<ul>
+  <li>Name: <%= vehicle.name %></li>
+  <li>Type: <%= vehicle.type_of_car %></li>
+  <li>Horsepower: <%= vehicle.horsepower %></li>
+  <% if vehicle.is_operational %>
+    <li>Status: This Vehicle Is Operational </li>
+  <% else %>
+    <li>Status: This Vehicle Is Broke AF </li>
+  <% end %>
+</ul>

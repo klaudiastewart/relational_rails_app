@@ -1,0 +1,13 @@
+<%=link_to "Back To List of Vehicles", "/vehicles" %>
+
+<h1><%= @vehicles.name %></h1>
+
+<% unless @vehicles.is_operational %>
+  <p>Vehicle Status: Vehicle is Operational</p>
+<% else %>
+  <p>Vehicle Status: Vehicle is Broke AF</p>
+<% end %>
+<p>Horsepower: <%= @vehicles.horsepower %></p>
+<p>Type: <%= @vehicles.type_of_car %></p>
+
+# NOTE: Create a link to get here!

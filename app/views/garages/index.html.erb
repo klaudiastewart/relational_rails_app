@@ -1,0 +1,12 @@
+<%= link_to "Home Page", "/" %>
+
+<h1>Garage List</h1>
+
+<% @garages.each do |garage| %>
+  <%= link_to "#{garage.name}", "/garages/#{garage.id}"%>
+<% end %>
+
+<p><%= link_to "New Garage", "/garages/new" %></p>
+
+
+
