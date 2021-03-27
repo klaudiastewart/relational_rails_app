@@ -1,5 +1,4 @@
 <h1>All Ice Cream Types</h1>
-<%= binding.pry %>
-<% @ice_cream_types.each do |ice_cream_type| %>
-  <h3><a href="/flavors/<%= ice_cream_type.id %>"><%= ice_cream_type.name %></a></h3>
+<% @flavors.each do |flavor| %>
+  <h3><a href="/flavors/<%= flavor.id %>"><%= flavor.name %></a></h3>
 <% end %>
