@@ -1,0 +1,7 @@
+<%= link_to "Flavors", "/flavors" %>
+<%= link_to "Shops", "/shops" %>
+
+<h1>All Ice Cream Types</h1>
+<% @flavors.each do |flavor| %>
+  <h3><a href="/flavors/<%= flavor.id %>"><%= flavor.name %></a></h3>
+<% end %>

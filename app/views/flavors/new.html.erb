@@ -1,0 +1,15 @@
+<%= link_to "Flavors", "/flavors" %>
+<%= link_to "Shops", "/shops" %>
+
+<h2> Ice Cream Flavor Section</h2>
+<h3>Please tell us about a type of ice cream (or alternative) you serve:</h3>
+<form action="/flavors" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>What's the name of your ice cream/alternative?</p>
+  <input type='text' name='flavor[name]'/><br/>
+  <p>Is the ice cream/alternative nut free?(y or n)</p>
+  <input type='text' name='flavor[nut_free]'/><br/>
+  <p>Please enter a numeric value for number of calories per scoop.</p>
+  <input type='number' name='flavor[calories_per_scoop]'/><br/>
+  <input type='submit'/>
+</form>

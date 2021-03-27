@@ -10,15 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_234429) do
+ActiveRecord::Schema.define(version: 2021_03_27_164519) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "moddatetime"
   enable_extension "plpgsql"
 
-  create_table "parents", force: :cascade do |t|
+  create_table "flavors", force: :cascade do |t|
+    t.string "name"
+    t.boolean "nut_free"
+    t.float "calories_per_scoop"
+    t.bigint "shop_id"
+    t.datetime "updated_at"
+    t.datetime "created_at"
+    t.index ["shop_id"], name: "index_flavors_on_shop_id"
+  end
+
+  create_table "shops", force: :cascade do |t|
     t.string "name"
     t.boolean "has_ice_cream_alternatives"
     t.float "google_review_rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
+  add_foreign_key "flavors", "shops"
 end
