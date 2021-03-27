@@ -10,7 +10,6 @@ class ShopsController < ApplicationController
   end
 
   def show
-    binding.pry
     @shop = Shop.find(params[:id])
     @count = @shop.flavors.count
   end
@@ -30,14 +29,6 @@ class ShopsController < ApplicationController
       google_review_rating: params[:shop][:google_review_rating]
       })
     shop.save
-
-    # flavor = Flavors.new({
-    #   name: params[:flavor][:name],
-    #   nut_free: params[:flavor][:nut_free],
-    #   calories_per_scoop: params[:flavor][:calories_per_scoop]
-    #   })
-    #
-    # flavor.save
     redirect_to '/shops'
     # redirect_to "/shops/#{params[:id]}/flavors"
   end
