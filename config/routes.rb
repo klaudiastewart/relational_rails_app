@@ -19,8 +19,10 @@ Rails.application.routes.draw do
   get '/shops', to: 'shops#index'
   get '/shops/new', to: 'shops#new'
   get '/shops/:id', to: 'shops#show'
+  get '/shops/:id/edit', to: 'shops#edit'
   get '/shops/:id/flavors', to: 'shops#pc_index'
   post '/shops', to: 'shops#create'
+  patch '/shops/:id', to: 'shops#update'
 
   get '/flavors', to: 'flavors#index'
   get '/flavors/:flavor_id', to: 'flavors#show'
