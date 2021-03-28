@@ -22,7 +22,7 @@ RSpec.describe "shops index page", type: :feature do
   end
 
   it "can click on a link to the shop" do
-    little_man = Shop.create(name: "Little Man's", created_at: Time.now) #2021-03-27 19:03:12 UTC)
+    little_man = Shop.create(name: "Little Man's", created_at: Time.now)
 
     visit "/shops"
 
