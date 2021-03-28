@@ -1,0 +1,16 @@
+<%= link_to "Flavors", "/flavors" %>
+<%= link_to "Shops", "/shops" %>
+
+<h2> <%= "Edit #{@shop.name}" %></h2>
+<h3>Please tell us about <%= "#{@shop.name}" %> updates:</h3>
+<form action="/shops/<%= @shop.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <p>What's the name of your shop?</p>
+  <input type='text' name='shop[name]' value="<%= @shop.name %>"/><br/>
+  <p>What is the Google review rating for your shop?</p>
+  <input type='text' name='shop[google_review_rating]' value="<%= @shop.google_review_rating %>"/><br/>
+  <p>Do you serve ice cream alternatives?(y or n)</p>
+  <input type='text' name='shop[has_ice_cream_alternatives]' value="<%= @shop.has_ice_cream_alternatives %>"/><br/>
+  <input type='submit' value="Update"/>
+</form>
