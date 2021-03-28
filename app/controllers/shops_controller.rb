@@ -22,6 +22,10 @@ class ShopsController < ApplicationController
   def new
   end
 
+  def edit
+    @shop = Shop.find(params[:id])
+  end
+
   def create
     shop = Shop.new({
       name: params[:shop][:name],
@@ -31,5 +35,16 @@ class ShopsController < ApplicationController
     shop.save
     redirect_to '/shops'
     # redirect_to "/shops/#{params[:id]}/flavors"
+  end
+
+  def update
+    shop = Shop.find(params[:id])
+    shop.update({
+      name: params[:shop][:name],
+      has_ice_cream_alternatives: params[:shop][:has_ice_cream_alternatives],
+      google_review_rating: params[:shop][:google_review_rating]
+      })
+    shop.save
+    redirect_to "/shops/#{shop.id}"  
   end
 end
