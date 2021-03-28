@@ -5,8 +5,8 @@ class FlavorsController < ApplicationController
 
   def new
     # binding.pry
-    # @shops = Shop.find(params[:id])
-    @flavor = Flavor.new
+    @shops = Shop.find(params[:id])
+    # @flavor = Flavor.new
   end
 
   def show
