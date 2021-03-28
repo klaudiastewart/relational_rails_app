@@ -16,4 +16,4 @@
 <h3> Number of flavors at this shop:</h3>
 <p><%= @count %></p>
 <%= link_to "Flavors at this shop", "/shops/#{@shop.id}/flavors" %>
-<%= link_to "Update Shop", "/shops" %>
+<%= link_to "Update Shop", "/shops/#{@shop.id}/edit" %>
