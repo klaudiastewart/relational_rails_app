@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "shop has flavors or not", type: :feature do
+RSpec.describe "shops flavors", type: :feature do
   it "can click on a button link for flavors and shops index" do
     little_man = Shop.create(name: "Little Man's", created_at: Time.now)
     visit "/shops/#{little_man.id}/flavors"
