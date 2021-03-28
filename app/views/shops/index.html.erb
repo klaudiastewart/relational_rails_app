@@ -1,9 +1,11 @@
 <%= link_to "Flavors", "/flavors" %>
 <%= link_to "Shops", "/shops" %>
 
-<h1>All Shops</h1>
+<h1>All Shops:</h1>
 
 <% @shops.each do |shop| %>
   <h3 style="display:inline"><a href="/shops/<%= shop.id %>"><%= shop.name%></a></h3>
   <small><%= "Created at: #{shop.created_at}" %></small></br>
-<% end %>
+<% end %></br>
+
+<h3><%= link_to "New Shop", "/shops/new" %></h3>

@@ -8,10 +8,10 @@ RSpec.describe "create a new shop", type: :feature do
     click_link "Shops"
   end
 
-  it "can click the submit button" do
+  it "can click the create shop button" do
     visit "/shops/new"
 
-    click_button "Submit"
+    click_button "Create Shop"
   end
 
   it "to have text boxes exist and can be filled in for shop questions" do
@@ -26,5 +26,5 @@ RSpec.describe "create a new shop", type: :feature do
 
     visit "/shops/new"
     expect(page).to have_content("Please tell us about your ice cream shop and the types you have:")
-  end 
+  end
 end
