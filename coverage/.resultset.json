@@ -494,6 +494,29 @@
           null
         ]
       },
+      "/Users/klaudia/DEV/Turing/mod_2/projects/relational_rails/final/relational_rails_app/spec/models/flavor_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
       "/Users/klaudia/DEV/Turing/mod_2/projects/relational_rails/final/relational_rails_app/app/models/flavor.rb": {
         "lines": [
           1,
@@ -505,6 +528,37 @@
         "lines": [
           1,
           1,
+          null
+        ]
+      },
+      "/Users/klaudia/DEV/Turing/mod_2/projects/relational_rails/final/relational_rails_app/spec/models/shop_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/klaudia/DEV/Turing/mod_2/projects/relational_rails/final/relational_rails_app/app/models/shop.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -589,17 +643,8 @@
           null,
           null
         ]
-      },
-      "/Users/klaudia/DEV/Turing/mod_2/projects/relational_rails/final/relational_rails_app/app/models/shop.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1616965244
+    "timestamp": 1616969173
   }
 }
