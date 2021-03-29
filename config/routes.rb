@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/shops/:id', to: 'shops#show'
   get '/shops/:id/edit', to: 'shops#edit'
   get '/shops/:id/flavors', to: 'shops#pc_index'
+  post '/shops/:id/flavors', to: 'shops#alphabatize', :as => :alphabatize
   post '/shops', to: 'shops#create'
   patch '/shops/:id', to: 'shops#update'
 

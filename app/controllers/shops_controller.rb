@@ -9,6 +9,12 @@ class ShopsController < ApplicationController
     @flavors = @shop.flavors.all
   end
 
+  def alphabatize
+    @shop = Shop.find(params[:id])
+    Flavor.order(:name)
+    redirect_to "shops/#{@shop.id}/flavors"
+  end
+
   def show
     @shop = Shop.find(params[:id])
     @count = @shop.flavors.count

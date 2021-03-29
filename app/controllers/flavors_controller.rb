@@ -34,6 +34,7 @@ class FlavorsController < ApplicationController
   end
 
   def update
+    # binding.pry
     flavor = Flavor.find(params[:flavor_id])
     flavor.update({
       name: params[:flavor][:name],
@@ -41,6 +42,7 @@ class FlavorsController < ApplicationController
       calories_per_scoop: params[:flavor][:calories_per_scoop]
       })
     flavor.save
+    # binding.pry
     redirect_to "/flavors/#{flavor.id}"
   end
 end
