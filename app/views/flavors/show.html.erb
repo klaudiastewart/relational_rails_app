@@ -14,3 +14,4 @@
 <p><%= @flavor.updated_at%></p>
 
 <%= link_to "Update #{@flavor.name}", "/flavors/#{@flavor.id}/edit" %>
+<%= button_to "Delete Flavor", "/flavors/#{@flavor.id}", method: :delete %>
