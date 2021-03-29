@@ -10,12 +10,12 @@ RSpec.describe "flavors index page", type: :feature do
     click_link "Shops"
   end
 
-  # it "can click the submit button" do
+  # it "can click the create flavor button" do
   #   little_man = Shop.create(name: "Little Man's", created_at: Time.now)
   #
   #   visit "/shops/#{little_man.id}/flavors/new"
   #
-  #   click_button "Submit"
+  #   click_button "Create Flavor"
   # end
 
   it "to have text boxes exist and can be filled in for flavor questions" do

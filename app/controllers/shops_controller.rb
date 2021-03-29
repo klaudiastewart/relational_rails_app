@@ -27,6 +27,7 @@ class ShopsController < ApplicationController
   end
 
   def create
+    binding.pry
     shop = Shop.new({
       name: params[:shop][:name],
       has_ice_cream_alternatives: params[:shop][:has_ice_cream_alternatives],
@@ -45,6 +46,6 @@ class ShopsController < ApplicationController
       google_review_rating: params[:shop][:google_review_rating]
       })
     shop.save
-    redirect_to "/shops/#{shop.id}"  
+    redirect_to "/shops/#{shop.id}"
   end
 end
