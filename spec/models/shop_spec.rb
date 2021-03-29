@@ -6,9 +6,6 @@ describe Shop, type: :model do
   end
 
   describe 'shop attributes' do
-    # subject { Shop.new }
-    # binding.pry
-    # it { is_expected.not_to be_valid }
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:has_ice_cream_alternatives) }
     it { is_expected.to validate_presence_of(:google_review_rating) }
