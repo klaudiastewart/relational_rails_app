@@ -45,4 +45,9 @@ class FlavorsController < ApplicationController
     # binding.pry
     redirect_to "/flavors/#{flavor.id}"
   end
+
+  def destroy
+    Flavor.destroy(params[:flavor_id])
+    redirect_to '/flavors'
+  end 
 end
