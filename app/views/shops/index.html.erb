@@ -5,7 +5,8 @@
 
 <% @shops.each do |shop| %>
   <h3 style="display:inline"><a href="/shops/<%= shop.id %>"><%= shop.name%></a></h3>
-  <small><%= "Created at: #{shop.created_at}" %></small></br>
+  <small><%= "Created at: #{shop.created_at}" %></small>  <%= link_to "Edit", "/shops/#{shop.id}/edit" %>
+</br>
 <% end %></br>
 
 <h3><%= link_to "New Shop", "/shops/new" %></h3>
