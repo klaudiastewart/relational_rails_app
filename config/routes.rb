@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get '/flavors/:flavor_id', to: 'flavors#show'
   get '/flavors/:flavor_id/edit', to: 'flavors#edit'
   patch '/flavors/:flavor_id', to: 'flavors#update'
+  delete '/flavors/:flavor_id', to: 'flavors#destroy'
 
   get '/shops/:id/flavors/new', to: 'flavors#new'
   post '/shops/:id/flavors', to: 'shops#create'
