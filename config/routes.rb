@@ -21,8 +21,6 @@ Rails.application.routes.draw do
   get '/shops/:id', to: 'shops#show'
   get '/shops/:id/edit', to: 'shops#edit'
   get '/shops/:id/flavors', to: 'shops#pc_index' #pc_index shows the flavors at the shop
-  # post '/shops/:id/flavors', to: 'shops#create' #Should this go here???
-  post '/shops/:id/flavors', to: 'shops#alphabatize' #, :as => :alphabatize
   post '/shops', to: 'shops#create'
   patch '/shops/:id', to: 'shops#update'
   delete '/shops/:id', to: 'shops#destroy'
@@ -34,5 +32,5 @@ Rails.application.routes.draw do
   delete '/flavors/:flavor_id', to: 'flavors#destroy'
 
   get '/shops/:id/flavors/new', to: 'flavors#new'
-  post '/shops/:id/flavors', to: 'shops#create'
+  post '/shops/:id/flavors', to: 'flavors#create'
 end

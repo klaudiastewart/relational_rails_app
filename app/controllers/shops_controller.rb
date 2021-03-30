@@ -6,13 +6,11 @@ class ShopsController < ApplicationController
 
   def pc_index
     @shop = Shop.find(params[:id])
-    @flavors = @shop.flavors.all
-  end
-
-  def alphabatize
-    @shop = Shop.find(params[:id])
-    Flavor.order(:name)
-    redirect_to "shops/#{@shop.id}/flavors"
+    if params[:sort]
+      @flavors = @shop.flavors.order(:name)
+    else
+      @flavors = @shop.flavors.all
+    end
   end
 
   def show
@@ -21,11 +19,11 @@ class ShopsController < ApplicationController
   end
 
   def show_flavors
-    binding.pry
     @final = Flavors.find(:id)
   end
 
   def new
+    @shop = Shop.new
   end
 
   def edit
@@ -33,15 +31,16 @@ class ShopsController < ApplicationController
   end
 
   def create
-    binding.pry
-    shop = Shop.new({
+    shop = Shop.create({
       name: params[:shop][:name],
       has_ice_cream_alternatives: params[:shop][:has_ice_cream_alternatives],
       google_review_rating: params[:shop][:google_review_rating]
       })
-    shop.save
-    redirect_to '/shops'
-    # redirect_to "/shops/#{params[:id]}/flavors"
+    if shop.save
+      redirect_to '/shops'
+    else
+      binding.pry
+    end
   end
 
   def update
@@ -58,5 +57,5 @@ class ShopsController < ApplicationController
   def destroy
     Shop.destroy(params[:id])
     redirect_to '/shops'
-  end 
+  end
 end

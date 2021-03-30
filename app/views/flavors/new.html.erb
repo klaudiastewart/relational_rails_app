@@ -3,8 +3,7 @@
 
 <h2> Ice Cream Flavor Section</h2>
 <h3>Please tell us about a type of ice cream (or alternative) you serve:</h3>
-<%= binding.pry %>
-<form action="/shops/#{params[:id]}/flavors" method="post">
+<form action="/shops/ <%= @shop.id %>/flavors" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>What's the name of your ice cream/alternative?</p>
   <input type='text' id="name_input" name='flavor[name]'/><br/>
