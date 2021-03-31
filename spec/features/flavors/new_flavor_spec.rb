@@ -25,6 +25,6 @@ RSpec.describe "flavors index page", type: :feature do
     click_button "Create Flavor"
 
     expect(current_path).to eq("/shops/#{little_man.id}/flavors")
-    expect(page). to have_content("Chocolate")
+    expect(page).to have_content("Chocolate")
   end
 end
