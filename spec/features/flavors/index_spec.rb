@@ -14,7 +14,6 @@ RSpec.describe "flavors index page", type: :feature do
   end
 
   it "can click on a button link for flavors and shops index" do
-    #can maybe have expected current path = for this test block
     visit "/flavors"
     expect(current_path).to eq("/flavors")
 
@@ -30,5 +29,18 @@ RSpec.describe "flavors index page", type: :feature do
     expect(current_path).to eq("/flavors")
 
     click_link "#{chocolate.name}"
+  end
+
+  it "can click on the edit link for a flavor" do
+    little_man = Shop.create!(name: "Little Man's", created_at: Time.now, has_ice_cream_alternatives: true, google_review_rating: 3)
+    chocolate = little_man.flavors.create(name: "Chocolate", nut_free: true, calories_per_scoop: 200)
+
+    visit "/flavors"
+    expect(current_path).to eq("/flavors")
+
+    click_link "Edit"
+
+    expect(current_path).to eq("/flavors/#{chocolate.id}/edit")
+    expect(page).to have_content("Edit #{chocolate.name}")
   end
 end
