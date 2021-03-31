@@ -6,10 +6,8 @@ describe Shop, type: :model do
   end
 
   describe 'shop attributes' do
-    it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_presence_of(:has_ice_cream_alternatives) }
-    it { is_expected.to validate_presence_of(:google_review_rating) }
-    it { is_expected.to validate_presence_of(:created_at) }
-    it { is_expected.to validate_presence_of(:updated_at) }
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:has_ice_cream_alternatives) }
+    it { should validate_presence_of(:google_review_rating) }
   end
 end

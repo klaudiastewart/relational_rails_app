@@ -14,6 +14,12 @@ class FlavorsController < ApplicationController
 
   def create
     @shop = Shop.find(params[:id])
+    # x = params[:flavor][:nut_free]
+    # if x == 'y'
+    #   x = true
+    # else x == 'n'
+    #   x = false
+    # end
     flavor = @shop.flavors.create({
       name: params[:flavor][:name],
       nut_free: params[:flavor][:nut_free],

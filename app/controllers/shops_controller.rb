@@ -1,10 +1,10 @@
 class ShopsController < ApplicationController
   def index
-    ordered = Shop.order(created_at: :desc)
-    @shops = ordered.all
+    @shops = Shop.order_by.all
   end
 
   def pc_index
+    # binding.pry
     @shop = Shop.find(params[:id])
     if params[:sort]
       @flavors = @shop.flavors.order(:name)
