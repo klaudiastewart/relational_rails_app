@@ -8,7 +8,7 @@ RSpec.describe "flavors index page", type: :feature do
   end
 
   it "can click on a button link for flavors and shops index" do
-
+    #can maybe have expected current path = for this test block
     visit "/flavors"
 
     click_link "Flavors"
@@ -20,7 +20,7 @@ RSpec.describe "flavors index page", type: :feature do
     chocolate = Flavor.create(name: "Chocolate", shop_id: little_man.id)
 
     visit "/flavors"
-    
+
     click_link "#{chocolate.name}"
   end
 end

@@ -1,7 +1,7 @@
 class Shop < ApplicationRecord
-  has_many :flavors
+  has_many :flavors, dependent: :destroy
 
-  #
+  #mayve model test this
   def order_by
     order(created_at: :desc)
   end
