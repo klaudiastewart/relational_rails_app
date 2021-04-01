@@ -19,11 +19,17 @@ Rails.application.routes.draw do
   get '/shops', to: 'shops#index'
   get '/shops/new', to: 'shops#new'
   get '/shops/:id', to: 'shops#show'
+  get '/shops/:id/edit', to: 'shops#edit'
   get '/shops/:id/flavors', to: 'shops#pc_index'
   post '/shops', to: 'shops#create'
+  patch '/shops/:id', to: 'shops#update'
+  delete '/shops/:id', to: 'shops#destroy'
 
   get '/flavors', to: 'flavors#index'
   get '/flavors/:flavor_id', to: 'flavors#show'
+  get '/flavors/:flavor_id/edit', to: 'flavors#edit'
+  patch '/flavors/:flavor_id', to: 'flavors#update'
+  delete '/flavors/:flavor_id', to: 'flavors#destroy'
 
   get '/shops/:id/flavors/new', to: 'flavors#new'
   post '/shops/:id/flavors', to: 'flavors#create'

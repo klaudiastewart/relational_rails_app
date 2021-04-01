@@ -4,9 +4,8 @@ class FlavorsController < ApplicationController
   end
 
   def new
-    # binding.pry
-    @shops = Shop.find(params[:id])
-    # @flavor = Flavor.new
+    @shop = Shop.find(params[:id])
+    @flavor = Flavor.new
   end
 
   def show
@@ -14,20 +13,32 @@ class FlavorsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @shops = Shop.find(params[:id])
-
-    @shops.flavors.create({
+    @shop = Shop.find(params[:id])
+    flavor = @shop.flavors.create({
       name: params[:flavor][:name],
       nut_free: params[:flavor][:nut_free],
       calories_per_scoop: params[:flavor][:calories_per_scoop]
-      # shops_id: params[:flavor][:shops_id]
       })
+      redirect_to "/shops/#{@shop.id}/flavors"
+  end
 
-    # flavor.save
+  def edit
+    @flavor = Flavor.find(params[:flavor_id])
+  end
 
-    # redirect_to "/flavors"
+  def update
+    flavor = Flavor.find(params[:flavor_id])
+    flavor.update({
+      name: params[:flavor][:name],
+      nut_free: params[:flavor][:nut_free],
+      calories_per_scoop: params[:flavor][:calories_per_scoop]
+      })
+    flavor.save
+    redirect_to "/flavors/#{flavor.id}"
+  end
 
-    redirect_to "/shops/#{params[:id]}/flavors"
+  def destroy
+    Flavor.destroy(params[:flavor_id])
+    redirect_to '/flavors'
   end
 end

@@ -6,10 +6,10 @@
 <form action="/shops" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>What's the name of your shop?</p>
-  <input type='text' name='shop[name]'/><br/>
+  <input type='text' id="name_input" name='shop[name]'/><br/>
   <p>What is the Google review rating for your shop?</p>
-  <input type='number' name='shop[google_review_rating]'/><br/>
+  <input type='number' id="review_input" name='shop[google_review_rating]'/><br/>
   <p>Do you serve ice cream alternatives?(y or n)</p>
-  <input type='text' name='shop[has_ice_cream_alternatives]'/><br/>
-  <input type='submit'/>
+  <input type='text' id="alternative" name='shop[has_ice_cream_alternatives]'/><br/>
+  </br><input type='submit' value="Create Shop"/>
 </form>

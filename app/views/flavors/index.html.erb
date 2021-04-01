@@ -3,5 +3,6 @@
 
 <h1>All Ice Cream Types</h1>
 <% @flavors.each do |flavor| %>
-  <h3><a href="/flavors/<%= flavor.id %>"><%= flavor.name %></a></h3>
+  <h3 style="display:inline"></br><a href="/flavors/<%= flavor.id %>"><%= flavor.name %></a></h3>
+  <small><%= link_to "Edit", "/flavors/#{flavor.id}/edit" %></small>
 <% end %>
