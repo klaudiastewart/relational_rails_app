@@ -4,7 +4,6 @@ class ShopsController < ApplicationController
   end
 
   def pc_index
-    # binding.pry
     # @thershold = Flavor.where(:calories_per_scoop >= "#{number}")
     @shop = Shop.find(params[:id])
     if params[:sort]
@@ -33,11 +32,7 @@ class ShopsController < ApplicationController
       has_ice_cream_alternatives: params[:shop][:has_ice_cream_alternatives],
       google_review_rating: params[:shop][:google_review_rating]
       })
-    if shop.save
       redirect_to '/shops'
-    else
-      binding.pry
-    end
   end
 
   def update

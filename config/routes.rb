@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/shops/new', to: 'shops#new'
   get '/shops/:id', to: 'shops#show'
   get '/shops/:id/edit', to: 'shops#edit'
-  get '/shops/:id/flavors', to: 'shops#pc_index' #pc_index shows the flavors at the shop
+  get '/shops/:id/flavors', to: 'shops#pc_index'
   post '/shops', to: 'shops#create'
   patch '/shops/:id', to: 'shops#update'
   delete '/shops/:id', to: 'shops#destroy'

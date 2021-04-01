@@ -6,7 +6,6 @@ describe Flavor, type: :model do
   end
 
   describe 'flavor attributes' do
-    #should instead of is_expected
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:nut_free) }
     it { should validate_presence_of(:calories_per_scoop) }
