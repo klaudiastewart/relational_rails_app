@@ -5,6 +5,7 @@ class ShopsController < ApplicationController
 
   def pc_index
     # binding.pry
+    # @thershold = Flavor.where(:calories_per_scoop >= "#{number}")
     @shop = Shop.find(params[:id])
     if params[:sort]
       @flavors = @shop.flavors.order(:name)
@@ -18,10 +19,6 @@ class ShopsController < ApplicationController
     @count = @shop.flavors.count
   end
 
-  def show_flavors
-    @final = Flavors.find(:id)
-  end
-
   def new
     @shop = Shop.new
   end
@@ -32,7 +29,7 @@ class ShopsController < ApplicationController
 
   def create
     shop = Shop.create({
-      name: params[:shop][:name],
+      name: params[:shop][:name].downcase,
       has_ice_cream_alternatives: params[:shop][:has_ice_cream_alternatives],
       google_review_rating: params[:shop][:google_review_rating]
       })
@@ -46,7 +43,7 @@ class ShopsController < ApplicationController
   def update
     shop = Shop.find(params[:id])
     shop.update({
-      name: params[:shop][:name],
+      name: params[:shop][:name].downcase,
       has_ice_cream_alternatives: params[:shop][:has_ice_cream_alternatives],
       google_review_rating: params[:shop][:google_review_rating]
       })
